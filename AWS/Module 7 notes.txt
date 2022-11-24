@@ -1,0 +1,48 @@
+Module 7
+Monitoring : observing systems, collecting metrics and then using date to make decisions
+eg EC2 instance being overutilized you can launch scaling service 
+
+Amazon Cloudwatch 
+
+-access to all your metric from a central location and on premise acess 
+-visibility into your app infrastructure and services
+his in turn means you can reduce mean time to resolution, or MTTR, and improve total cost of ownership, or TCO. 
+So in our coffee shop, if the MTTR of cleaning hours restaurant machines is shorter then we can save on TCO with them. 
+
+
+you need visibility on your system in your business 
+need to monitor the health and operations of your solutions 
+
+allows you to monitor the AWS infrastructure and monitor the services and applications in realtime
+
+Metrics : variable tied tgo resources
+For example, the amount of espressos made by an espresso machine or the CPU utilization of an EC2 instance. 
+
+Cloudwatch alarm : custom metric
+
+Cloud dashboard feature : shows us all our espresso machines so we can monitor them
+ 
+
+Amazon Cloudtrail
+
+comphrensive auditing api tool
+
+Every request gets trailed in cloud trail engine, which operator, when they made the call
+ip address, where were they
+
+AWS Trusted Advisor
+-automated advisior
+-evaluate ur resources against 5 pillars
+	-cost optimization
+	-performance
+	-security
+	-fault tolerance
+	-service limits : tells you when you are hitting AWS service limit 
+if you don't have multi-factor authentication turned on for your root user, 
+it's going to let you know
+
+action recommended
+investigation recommended 
+no problems detected 
+
+You can set up email alerts that go out to billing, operations, and security contacts

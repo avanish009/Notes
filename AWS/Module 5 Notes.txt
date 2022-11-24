@@ -1,0 +1,108 @@
+Module 5 Notes
+
+block-level storage
+
+as a place to store files
+series of bytes that are stored in blocks in disc
+when a file is overwritten its just updates just the piece that changes.
+eg. hard drive 
+EC2 instance have hard drives 
+
+instance store volumes physcically attached to the host so if you stop the instance the data that is store gets deleted 
+so how can you write the data..??
+Elastic Block Store (EBS) comes into play
+
+
+you can create virtual hard drives
+that we call EBS volumes seperate drive from EC2 drom the local instance volumes aren't tied to the host
+
+Snapshot : Incremental data
+its important to take regular snapshot of your EBS volume
+
+
+Amazon Simple Storage Service (S3)
+store and retrieve unlimited amount of data
+instead storing them as objects you store them as buckets
+think of a file sitting in your hard drive that is object think of file directory that is the bucket
+5TB is th maximum size you can upload
+
+Amazon S3 Standard
+99.99999% of durability
+probablility that it will remain intact after 1 year
+
+static website hosting 
+Another useful way to use S3 is static website hosting, where a static website is a collection of HTML files and each file is akin to a physical page of the actual site. 
+You can do this by simply uploading all your HTML, static web assets, and so forth into a bucket and then checking a box to host it as a static website. 
+You can then enter the bucket's URL and ba-bam! Instant website
+
+Amazon S3 Standard-Infrequent Access or S3-IA
+
+Which is used for data that is accessed less frequently but requires rapid access when needed.
+ This means it's a perfect place to store backups, disaster recovery files, or any object that requires a long-term storage.
+
+
+Amazon S3 Glacier
+Audit data
+need to retain data for several year we can archive the data 
+can use vault and archive the data 
+
+
+Object storage : (Complete object or ocassional changes ) S3
+treats any file as a complete, discreet object.
+Now this is great for documents, and images, and video files that get uploaded and consumed as entire objects, 
+but every time there's a change to the object, you must re-upload the entire file.
+
+Block storage : (Complex read write) EBS
+breaks those files down to small component parts or blocks. 
+This means, for that 80-gigabyte file, when you make an edit to one scene in the film and save that change, 
+the engine only updates the blocks where those bits live
+
+
+Amazon Elastic file system (EFS)
+Managed
+Multiple instances can access the data in EFS at the same time scale ups and down as needed
+
+lift and shift migration same control as on premise environment storage, OS
+Amazon Relational Database Service (Amazon RDS)
+
+can be migrated or deployed 
+Amazon Aurora
+ Managed relational database options priced 
+
+
+Amazon DynamoDB
+DynamoDB, and that's great for key-value pair databases
+serverless database
+DAX (DynamoDB Accelerator)
+
+can be tored or queried
+data is organized into items and items have attributes 
+coffee - item
+
+20% milk
+arabian coffee   - attributes (different features of data)
+latte
+
+queries u run on non-relational databse tends to be simpler
+
+Amazon Redshift
+ service is used to query and analyze data across a data warehouse
+
+A single query against multiple databases sounds nice, but traditional databases don't handle them easily. 
+
+
+
+Once data becomes too complex to handle with traditional relational databases, you've entered the world of data warehouses.
+As long as your business question is looking backwards at all, then a data warehouse is the right solution for that line of business intelligence.
+This is data warehousing as a service. 
+It's massively scalable. Redshift nodes in multiple petabyte sizes is very common. 
+In fact, in cooperation with Amazon Redshift Spectrum, you can directly run a single SQL query against exabytes of unstructured data running in data lakes. 
+
+AWS Database Migration Service (DMS)
+
+AWS Schema conversion tool
+
+DMS helps customers migrate existing databases onto AWS in a secure and easy fashion. 
+You essentially migrate data between a source and a target database. 
+The best part is that the source database remains fully operational during the migration, minimizing downtime to applications that rely on that database. 
+Better yet is that the source and target databases don't have to be of the same type

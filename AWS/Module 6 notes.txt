@@ -1,0 +1,109 @@
+Module 6
+
+> Shared responsibility model
+
+eg. A house 
+constructor - with 4 strong walls and doors 
+
+you - to close and lock the doors
+
+
+if you install OS on Ec2 instance 
+AWS cannot access it 
+the cannot deploy anything that destroys your system
+its users responsibility to maintain them
+
+
+AWS provide everyone with toolset they need to for their data to authorise some individual 
+or lock it down so no one can access it
+
+> User permission and access
+
+
+AWS root user :  can access and control anything - turn on multi-factor authentication 
+
+AWS identity and access management (IAM)
+
+bydefault - no permission (0)
+has to explicitly gives permission 
+
+Principle of least privileage : A user is granted access only to what they need 
+
+IAM policy to a IAM user 
+A JSON document that describes what API call a user can and cannot make
+
+
+Effect :Either Allow or Deny
+Action : Any AWS api call
+Resource : Which AWS resource the API call is for
+
+Policies : document that describe permission that you can attach it into the group 
+
+IAM group : easier to manage permission
+		attach the policies to the group 
+
+
+identities in AWS called "Roles"
+-temporary amount of time 
+-assume to gain temporary access 
+-when it assumes the role it abandons the previous permissions and uses this role
+
+> AWS Organizations
+
+A central location to manage multiple AWS accounts
+-centralized management of all those account eg.A, B, C
+-Consolidated billing 
+-Hierarchial groupings
+
+Service control policies(SCPs)
+you can restrict aws resource users and roles each member account and an organizational user can access
+
+> Compliance
+
+Consumer data in EU : GDPR  General data protection regulation
+Healthcare app in US : HIPPA Health insuarance portability and accountability act
+
+AWS will not automatically replicate data in other regions
+
+AWS Artifacts
+-you can gain access to compliance reports done by third parties who have validated a wide range of compliance standards.
+
+> Distributed Denial-of-service attacks (DDoS)
+
+
+overwhelming the system that it can not operate
+zombie bots : brainlessely attack your system
+unbearable load that they cannot process
+
+UDP FLOOD : weather request <-> gimme weather | solution security group
+
+HTTP LEVEL ATTACK : zombified attack
+Slowloris attack : attacker pretends to have terribly slow connection    | solution Elastic load balancer
+				until they gey get entire packet they cannot move on to other request
+
+For sharpest and most sophiesticated
+AWS shield with AWS WAF (ML capabelities)
+
+> Additional security services
+Encryption hat's the notion of encryption, which is securing a message or data in a way that can only be accessed by authorized parties.
+
+Encryption at rest : when data is idle eg. serverside DynamoDB KMS (Key Management service )
+	     in transit : from A to B rg. Redshift we use ssl secure socket layer 
+
+Amazon Inspector : by running an automated security assistance against to you infrastructure
+Amazon Agent
+
+threat detection offering known as "Amazon GuardDuty"
+
+AWS IAM 
+user no permission
+groups grouping of user 
+roles temp access
+policies to gain access to identites
+identity federation : role based access 
+multifactor auth. esp for root user 
+
+
+
+
+
